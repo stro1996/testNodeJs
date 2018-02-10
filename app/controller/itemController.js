@@ -45,7 +45,6 @@ module.exports = {
       if (result.createdBy === req.user.email) {
         result.name = req.body.name || result.name;
         result.discription = req.body.discription || result.discription;
-
         result.save((err, result) => {
           if (err) {
             return res.sendStatus(500);

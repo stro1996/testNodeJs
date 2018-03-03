@@ -24,20 +24,6 @@ module.exports = {
     });
   },
 
-  takeAll: (req, res) => {
-    User.find({}, (err, result) => {
-      if (err) {
-        console.log(err);
-        return null;
-      }
-      let map = {};
-      result.forEach((user) => {
-        map[user._id] = user;
-      });
-      return res.json(map);
-    });
-  },
-
   singIn: (req, res) => {
     User.findOne({
       email: req.body.email

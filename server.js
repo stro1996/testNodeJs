@@ -1,12 +1,12 @@
-const express       = require('express');
-const mongoose      = require('mongoose');
-const bluebird      = require('bluebird');
-const bodyParser    = require('body-parser');
-const jwt           = require('jsonwebtoken');
-const route         = require('./app/routes/index');
+const express = require('express');
+const mongoose = require('mongoose');
+const bluebird = require('bluebird');
+const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
+const route = require('./app/routes/index');
 
-const port  = 3012;
-const app   = express();
+const port = 3012;
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -16,8 +16,8 @@ app.use((req, res, next) => {
     jwt.verify(req.headers.authorization, 'secret', (err, decode) => {
       if (err) req.user = undefined;
       req.user = decode;
-      if (!req.user && (req.path != '/auth/register' || req.path != '/auth/sign_in')) {
-        return res.sendStatus(401)
+      if (!req.user && (req.path !== '/auth/register' || req.path !== '/auth/sign_in')) {
+        return res.sendStatus(401);
       }
       next();
     });
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 route(app);
 
 app.use((req, res) => {
-  res.status(404).send({ url: req.originalUrl + ' not found' })
+  res.status(404).send({ url: req.originalUrl + ' not found' });
 });
 
 const startServer = () => {
@@ -48,4 +48,4 @@ const connectDB = () => {
 connectDB()
   .on('error', console.log)
   .on('disconnected', connectDB)
-  .once('open', startServer)
+  .once('open', startServer);

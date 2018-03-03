@@ -1,4 +1,4 @@
-const Dasbord = require('../model/dashbordModel')
+const Dasbord = require('../model/dashbordModel');
 
 module.exports = {
   get: (req, res) => {
@@ -9,7 +9,7 @@ module.exports = {
       }
       return res.status(200).json({
         item: result
-      })
-    })
+      });
+    });
   }
-}
+};

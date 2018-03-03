@@ -1,6 +1,6 @@
-const mongoose    = require('mongoose');
-const bcrypt      = require('bcrypt');
-const Schema      = mongoose.Schema;
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const Schema = mongoose.Schema;
 
 let UserSchema = new Schema({
   fullName: {
@@ -15,7 +15,7 @@ let UserSchema = new Schema({
     trim: true,
     required: true,
     validate: (email) => {
-      return /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(email)
+      return /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(email);
     }
   },
   hash_password: {
@@ -28,15 +28,15 @@ let UserSchema = new Schema({
   }
 });
 
-UserSchema.methods.comparePassword = function(password) {
+UserSchema.methods.comparePassword = function (password) {
   return bcrypt.compareSync(password, this.hash_password);
 };
 
 UserSchema.methods.checkPassword = (password) => {
-  let regPassword = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+  let regPassword = new RegExp('^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})');
   if (password && regPassword.test(password)) return false;
-  return true
-}
+  return true;
+};
 
 const User = mongoose.model('User', UserSchema);
 

@@ -1,7 +1,5 @@
-const mongoose    = require('mongoose');
-const User        = require('./uesrModel');
-const jwt         = require('jsonwebtoken');
-const Schema      = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 let itemCardSchema = new Schema({
   name: {
@@ -20,7 +18,7 @@ let itemCardSchema = new Schema({
   },
   createdBy: {
     type: String,
-    lowercase: true,
+    lowercase: true
   }
 });
 

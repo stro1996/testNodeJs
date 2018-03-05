@@ -1,0 +1,14 @@
+html
+  head
+    style
+      include ../style/startScreen.css
+    script
+      include ../script/startScreen.js
+    title!= title
+  body.body
+    h1
+      .logo!= message
+    div
+      .container
+        button.button(onclick = 'moveToLogin()') Login
+        button.button(onclick = 'moveToRegistration()') Registration    

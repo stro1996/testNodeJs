@@ -1,0 +1,19 @@
+html
+  head
+    style
+      include ../style/loginScreen.css
+    script
+      include ../script/registrationScreen.js
+    title!= title
+  body.body
+    h1.textLogin!= message
+    div
+      .divForInput
+        input.input(id = 'email', type = 'text', placeholder = 'E-mail')
+        input.input(id = 'password', type = 'text', placeholder = 'password')
+        input.input(id = 'password confirmation', type = 'text', placeholder = 'password confirmation')
+        input.input(id = 'name', type = 'text', placeholder = 'first name')
+    div
+      .divForButton
+        button.button(onclick = 'registration()') Registration
+        button.button(onclick = 'back()') Back

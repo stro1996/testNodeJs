@@ -10,6 +10,8 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.set('views', './app/view/html');
+app.set('view engine', 'pug');
 
 app.use((req, res, next) => {
   if (req.headers && req.headers.authorization) {
@@ -30,7 +32,7 @@ app.use((req, res, next) => {
 route(app);
 
 app.use((req, res) => {
-  res.status(404).send({ url: req.originalUrl + ' not found' });
+  res.status(404).send({url: req.originalUrl + ' not found'});
 });
 
 const startServer = () => {

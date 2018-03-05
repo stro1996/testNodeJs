@@ -1,0 +1,17 @@
+html
+  head
+    style
+      include ../style/loginScreen.css
+    script
+      include ../script/loginScreen.js
+    title!= title
+  body.body
+    h1.textLogin!= message
+    div
+      .divForInput
+        input.input(id = 'email', type = 'text', placeholder = 'E-mail')
+        input.input(id = 'password', type = 'text', placeholder = 'password')
+    div
+      .divForButton
+        button.button Login
+        button.button(onclick = 'back()') Back

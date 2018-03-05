@@ -35,6 +35,6 @@ async function registration () {
   }
 }
 
-function back() {
-  window.location.href = '/'
+function back () {
+  window.location.href = '/';
 }

@@ -1,5 +1,5 @@
 module.exports = {
   renderStartScreen: (req, res, next) => {
-    res.render('loginScreen', { title: 'testNode', message: 'Hello!'});
+    res.render('startScreen', { title: 'testNode', message: 'Hello!'});
   }
-}
+};

@@ -16,12 +16,11 @@ module.exports = {
   getAll: (req, res) => {
     Item.find({}, (err, result) => {
       if (err) {
-        console.log(err);
         return null;
       }
-      let map = {};
-      result.forEach((user) => {
-        map[user._id] = user;
+      let map = [];
+      result.forEach((user, index) => {
+        map[index] = user;
       });
       return res.json(map);
     });
@@ -32,9 +31,7 @@ module.exports = {
       if (err) {
         return res.sendStatus(400);
       }
-      return res.status(200).json({
-        item: result
-      });
+      return res.status(200).json(result);
     });
   },
 

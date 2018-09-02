@@ -25,6 +25,9 @@ app.use((req, res, next) => {
     });
   } else {
     req.user = undefined;
+    if (!req.user && (req.path.indexOf('auth') === -1)) {
+      return res.sendStatus(401);
+    }
     next();
   }
 });

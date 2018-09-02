@@ -19,7 +19,7 @@ module.exports = {
         });
       } else {
         user.hash_password = undefined;
-        return res.json({token: jwt.sign({email: user.email, fullName: user.fullName, _id: user._id}, 'secret', {expiresIn: '1h'})});
+        return res.json({token: jwt.sign({email: user.email, fullName: user.fullName, _id: user._id}, 'secret', {expiresIn: '10h'})});
       }
     });
   },

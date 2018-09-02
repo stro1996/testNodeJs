@@ -16,13 +16,13 @@ module.exports = {
   getAll: (req, res) => {
     Item.find({}, (err, result) => {
       if (err) {
-        return null;
+        return res.sendStatus(400);
       }
-      let map = [];
-      result.forEach((user, index) => {
-        map[index] = user;
-      });
-      return res.json(map);
+      // let map = [];
+      // result.forEach((user, index) => {
+      //   map[index] = user;
+      // });
+      return res.json(result);
     });
   },
 

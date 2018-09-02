@@ -13,9 +13,11 @@ module.exports = {
     newUser.hash_password = bcrypt.hashSync(req.body.password, 10);
     newUser.save((err, user) => {
       if (err) {
-        if (err.message.includes('User validation failed: email: Validator failed for path `email` with value')) return res.status(400).send({massage: 'wrong email'});
+        if (err.message.includes('User validation failed: email: Validator failed for path `email` with value')) {
+          return res.status(400).send({massage: 'wrong email'});
+        }
         return res.status(400).send({
-          massage: 'such user already exists'
+          massage: err.name || 'such user already exists'
         });
       } else {
         user.hash_password = undefined;
@@ -41,11 +43,4 @@ module.exports = {
     });
   },
 
-  ligonRequired: (req, res, next) => {
-    if (req.user) {
-      next();
-    } else {
-      return res.status(401).json({ message: 'Unauthorized user!' });
-    }
-  }
 };

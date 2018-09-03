@@ -8,6 +8,8 @@
 	npm start
 
 # Documentation
+
+## General Info
 	Header: {
 		Accept : application/json
 		Content-Type: application/json
@@ -19,7 +21,7 @@
 		status: 404  body: "url": … not found"
 
 
-###### POST /auth/register
+## POST /auth/register
 
 	boddy: {
 	 	fullName: required,
@@ -36,7 +38,7 @@
 		}
 Example:
 ![Optional Text](../master/imagesForDoc/registration.png)
- #POST /auth/sign_in
+ ## POST /auth/sign_in
 
 	body: {
 		email: required,
@@ -51,7 +53,7 @@ Example:
 		}
 Example
 ![Optional Text](../master/imagesForDoc/signIn.png)
- #POST /item_card
+ ## POST /item_card
 
 	  body: {
   		name: required,
@@ -62,7 +64,7 @@ Example
 
 Example
 ![Optional Text](../master/imagesForDoc/post.png)
- #GET /item_card
+ ## GET /item_card
 
 	response
 		status: 200
@@ -77,7 +79,7 @@ Example
 		]
 Example
 ![Optional Text](../master/imagesForDoc/getItems.png)
-GET /item_card/get_my
+## GET /item_card/get_my
 
 	response
 		status: 200
@@ -92,7 +94,7 @@ GET /item_card/get_my
 		]
 Example
 ![Optional Text](../master/imagesForDoc/getMy.png)
- #PUT /item_card
+ ## PUT /item_card
 
 	body: {
 		id: required,
@@ -113,7 +115,7 @@ Example
 		}
 Example
 ![Optional Text](../master/imagesForDoc/put.png)
- #DELETE /item_card
+ ## DELETE /item_card
 
 	body: {
 		id: required

@@ -14,6 +14,7 @@ Header: {
 }
 
 General Error:
+
 	- status: 401  body : Unauthorized
 	- status: 404  body: "url": … not found"
 
@@ -44,26 +45,24 @@ POST /auth/sign_in
 
 	response:
 		status: 200
-
-
 		body: {
 			token
 		}
 
 POST /item_card
 
-  body: {
-  	name: required,
-  	discription: required
-  }
+	  body: {
+  		name: required,
+	  	discription: required
+	  }
 
-  response
-  	status 200
+	  response: status 200
 
 GET /item_card
+
 	response
 		status: 200
-		body : [
+		body :[
 			{
 				name,
 				discription,
@@ -77,7 +76,7 @@ GET /item_card/get_my
 
 	response
 		status: 200
-		body : [
+		body: [
 			{
 				name,
 				discription,
@@ -89,28 +88,28 @@ GET /item_card/get_my
 
 PUT /item_card
 
-		body: {
-			id: required,
-			name,
-			description
+	body: {
+		id: required,
+		name,
+		description
+	}
+	
+	response
+		status: 200
+		body : {
+			newElement: {
+				name,
+				discription,
+				created,
+				createdBy,
+				id
+			}
 		}
 
-		response
-			status: 200
-			body : {
-				newElement:	 {
-					name,
-					discription,
-					created,
-					createdBy,
-					id
-				}
-			}
-
 DELETE /item_card
+
 	body: {
 		id: required
 	}
 
-	response:
-		status: 200
+	response: status 200

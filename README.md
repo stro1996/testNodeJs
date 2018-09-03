@@ -16,7 +16,7 @@
 	}
 
 	General Error:
-	
+
 		status: 401  body : Unauthorized
 		status: 404  body: "url": … not found"
 
@@ -56,8 +56,10 @@
  ## POST /item_card
 
 	  body: {
-  		name: required,
-	  	discription: required
+  		name (String): required,
+	  	discription (String): required,
+			price (Number): required,
+			categories (String): required,
 	  }
 
 	  response: status 200
@@ -74,7 +76,9 @@
 				discription,
 				created,
 				createdBy,
-				id
+				id,
+				price,
+				categories
 			}
 		]
 ###### Example
@@ -89,7 +93,9 @@
 				discription,
 				created,
 				createdBy,
-				id
+				id,
+				price,
+				categories
 			}
 		]
 ###### Example
@@ -99,9 +105,11 @@
 	body: {
 		id: required,
 		name,
-		description
+		description,
+		price,
+		categories
 	}
-	
+
 	response
 		status: 200
 		body : {
@@ -110,7 +118,9 @@
 				discription,
 				created,
 				createdBy,
-				id
+				id,
+				price,
+				categories,
 			}
 		}
 ###### Example

@@ -35,6 +35,7 @@ POST /auth/register
 			token
 		}
 
+	![alt text](https://github.com/stro1996/testNodeJs/blob/add_readme/imagesForDoc/registration.png)
 POST /auth/sign_in
 
 	body: {

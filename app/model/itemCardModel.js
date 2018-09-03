@@ -12,6 +12,15 @@ let itemCardSchema = new Schema({
     trim: true,
     required: true
   },
+  price: {
+    type: Number,
+    required: true
+  },
+  categories: {
+    type: String,
+    trim: true,
+    required: true
+  },
   created: {
     type: Date,
     default: new Date()

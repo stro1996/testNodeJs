@@ -43,6 +43,8 @@ const edditItem = (req, res) => {
     if (result.createdBy === req.user.email) {
       result.name = req.body.name || result.name;
       result.discription = req.body.discription || result.discription;
+      result.price = req.body.price || result.price;
+      result.categories = req.body.categories || result.categories;
       result.save((err, result) => {
 
         if (err) {

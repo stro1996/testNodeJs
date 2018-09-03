@@ -35,7 +35,7 @@ POST /auth/register
 			token
 		}
 
-	![Alt text](https://github.com/stro1996/testNodeJs/blob/master/imagesForDoc/registration.png "Title")
+	![Cat](https://github.com/stro1996/testNodeJs/blob/master/imagesForDoc/registration.png)
 POST /auth/sign_in
 
 	body: {

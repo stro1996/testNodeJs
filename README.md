@@ -1,5 +1,5 @@
 # Installation
-	git clone
+	git clone git@github.com:stro1996/testNodeJs.git
 
 # Setup
 	Install mongDB: https://www.mongodb.com/

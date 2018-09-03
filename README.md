@@ -34,8 +34,8 @@ POST /auth/register
 		body: {
 			token
 		}
-
-	![Cat](https://github.com/stro1996/testNodeJs/blob/master/imagesForDoc/registration.png)
+![Optional Text](../master/imagesForDoc/registration.png)
+![Cat](https://github.com/stro1996/testNodeJs/blob/master/imagesForDoc/registration.png)
 POST /auth/sign_in
 
 	body: {

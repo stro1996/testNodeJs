@@ -19,7 +19,7 @@
 		status: 404  body: "url": … not found"
 
 
-## POST /auth/register
+###### POST /auth/register
 
 	boddy: {
 	 	fullName: required,

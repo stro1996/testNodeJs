@@ -34,8 +34,8 @@ POST /auth/register
 		body: {
 			token
 		}
+Example:
 ![Optional Text](../master/imagesForDoc/registration.png)
-![Cat](https://github.com/stro1996/testNodeJs/blob/master/imagesForDoc/registration.png)
 POST /auth/sign_in
 
 	body: {
@@ -49,7 +49,8 @@ POST /auth/sign_in
 		body: {
 			token
 		}
-
+Example
+![Optional Text](../master/imagesForDoc/signIn.png)
 POST /item_card
 
 	  body: {
@@ -59,6 +60,8 @@ POST /item_card
 
 	  response: status 200
 
+Example
+![Optional Text](../master/imagesForDoc/post.png)
 GET /item_card
 
 	response
@@ -72,7 +75,8 @@ GET /item_card
 				id
 			}
 		]
-
+Example
+![Optional Text](../master/imagesForDoc/getItems.png)
 GET /item_card/get_my
 
 	response
@@ -86,7 +90,8 @@ GET /item_card/get_my
 				id
 			}
 		]
-
+Example
+![Optional Text](../master/imagesForDoc/getMy.png)
 PUT /item_card
 
 	body: {
@@ -106,7 +111,8 @@ PUT /item_card
 				id
 			}
 		}
-
+Example
+![Optional Text](../master/imagesForDoc/put.png)
 DELETE /item_card
 
 	body: {
@@ -114,3 +120,5 @@ DELETE /item_card
 	}
 
 	response: status 200
+Example
+![Optional Text](../master/imagesForDoc/delete.png)

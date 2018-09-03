@@ -36,7 +36,7 @@
 		body: {
 			token
 		}
-Example:
+###### Example:
 ![Optional Text](../master/imagesForDoc/registration.png)
  ## POST /auth/sign_in
 
@@ -51,7 +51,7 @@ Example:
 		body: {
 			token
 		}
-Example
+###### Example:
 ![Optional Text](../master/imagesForDoc/signIn.png)
  ## POST /item_card
 
@@ -62,7 +62,7 @@ Example
 
 	  response: status 200
 
-Example
+###### Example
 ![Optional Text](../master/imagesForDoc/post.png)
  ## GET /item_card
 
@@ -77,7 +77,7 @@ Example
 				id
 			}
 		]
-Example
+###### Example
 ![Optional Text](../master/imagesForDoc/getItems.png)
 ## GET /item_card/get_my
 
@@ -92,7 +92,7 @@ Example
 				id
 			}
 		]
-Example
+###### Example
 ![Optional Text](../master/imagesForDoc/getMy.png)
  ## PUT /item_card
 
@@ -113,7 +113,7 @@ Example
 				id
 			}
 		}
-Example
+###### Example
 ![Optional Text](../master/imagesForDoc/put.png)
  ## DELETE /item_card
 
@@ -122,5 +122,5 @@ Example
 	}
 
 	response: status 200
-Example
+###### Example
 ![Optional Text](../master/imagesForDoc/delete.png)

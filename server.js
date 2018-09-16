@@ -8,6 +8,19 @@ const route = require('./app/routes/index');
 const port = 3012;
 const app = express();
 
+// enable CORS
+app.use(function(req, res, next) {
+  // write headers
+  res.header("Access-Control-Allow-Origin", req.headers.origin);
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Credentials", "true");
+  // if it's preflight packet, send 200
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.set('views', './app/view/html');

@@ -20,7 +20,7 @@ async function registration () {
       let data = await res.json();
       switch (res.status) {
         case 400:
-          console.log(data.massage);
+          console.log(data.message);
           break;
         case 401:
           console.log(data.message);

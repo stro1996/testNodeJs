@@ -12,7 +12,7 @@ const app = express();
 app.use(function(req, res, next) {
   // write headers
   res.header("Access-Control-Allow-Origin", req.headers.origin);
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.header("Access-Control-Allow-Credentials", "true");
   // if it's preflight packet, send 200
   if (req.method === 'OPTIONS') {
@@ -27,6 +27,7 @@ app.set('views', './app/view/html');
 app.set('view engine', 'pug');
 
 app.use((req, res, next) => {
+  console.log('### first handler:', req.headers, req.body);
   if (req.headers && req.headers.authorization) {
     jwt.verify(req.headers.authorization, 'secret', (err, decode) => {
       if (err) req.user = undefined;

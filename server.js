@@ -27,7 +27,6 @@ app.set('views', './app/view/html');
 app.set('view engine', 'pug');
 
 app.use((req, res, next) => {
-  console.log('### first handler:', req.headers, req.body);
   if (req.headers && req.headers.authorization) {
     jwt.verify(req.headers.authorization, 'secret', (err, decode) => {
       if (err) req.user = undefined;

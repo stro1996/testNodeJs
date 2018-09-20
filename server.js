@@ -13,6 +13,7 @@ app.use(function(req, res, next) {
   // write headers
   res.header("Access-Control-Allow-Origin", req.headers.origin);
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Credentials", "true");
   // if it's preflight packet, send 200
   if (req.method === 'OPTIONS') {

@@ -23,7 +23,7 @@ let itemCardSchema = new Schema({
   },
   created: {
     type: Date,
-    default: new Date()
+    default: Date.now()
   },
   createdBy: {
     type: String,

@@ -7,17 +7,17 @@ module.exports = {
     let newUser = new User(req.body);
     if (newUser.checkPassword(req.body.password)) {
       return res.status(400).json({
-        massage: 'worong password'
+        message: 'wrong password'
       });
     }
     newUser.hash_password = bcrypt.hashSync(req.body.password, 10);
     newUser.save((err, user) => {
       if (err) {
         if (err.message.includes('User validation failed: email: Validator failed for path `email` with value')) {
-          return res.status(400).send({massage: 'wrong email'});
+          return res.status(400).send({message: 'wrong email'});
         }
         return res.status(400).send({
-          massage: err.name || 'such user already exists'
+          message: err.name || 'such user already exists'
         });
       } else {
         user.hash_password = undefined;
